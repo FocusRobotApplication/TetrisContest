@@ -59,9 +59,6 @@ set(${PROJECT_NAME}_SOURCES3
 set(${PROJECT_NAME}_SOURCES4
     src/learn_to_operate.cpp
 )
-set(${PROJECT_NAME}_SOURCES5
-    src/driver_demo.cpp
-)
 set(${PROJECT_NAME}_SOURCES6
     src/ik_demo.cpp
 )
@@ -71,7 +68,6 @@ add_executable(testIO ${${PROJECT_NAME}_SOURCES2})
 add_executable(testAuboAPI ${${PROJECT_NAME}_SOURCES3})
 add_executable(aubo_gazebo_driver src/aubo_gazebo_driver.cpp)
 add_executable(learn_to_operate ${${PROJECT_NAME}_SOURCES4})
-add_executable(driver_demo ${${PROJECT_NAME}_SOURCES5})
 add_executable(ik_demo ${${PROJECT_NAME}_SOURCES6})
 
 #LINK_LIBRARIES(${CMAKE_CURRENT_SOURCE_DIR}/lib)
@@ -81,7 +77,6 @@ target_link_libraries(testAuboAPI ${catkin_LIBRARIES} ${AuBo_LIBRARIES})
 target_link_libraries(testIO ${catkin_LIBRARIES} ${AuBo_LIBRARIES})
 target_link_libraries(aubo_gazebo_driver ${catkin_LIBRARIES})
 target_link_libraries(learn_to_operate ${catkin_LIBRARIES} ${AuBo_LIBRARIES})
-target_link_libraries(driver_demo ${catkin_LIBRARIES} ${AuBo_LIBRARIES})
 target_link_libraries(ik_demo ${catkin_LIBRARIES} ${AuBo_LIBRARIES})
 
 
