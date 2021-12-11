@@ -154,9 +154,6 @@ include_directories(
 add_executable(keyboard_demo src/keyboard_demo.cpp)
 target_link_libraries(keyboard_demo ${catkin_LIBRARIES})
 
-add_executable(sucker_demo src/sucker_demo.cpp)
-target_link_libraries(sucker_demo ${catkin_LIBRARIES})
-
 #############
 ## Install ##
 #############
