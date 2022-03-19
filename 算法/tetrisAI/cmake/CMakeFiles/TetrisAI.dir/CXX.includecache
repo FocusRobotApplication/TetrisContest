@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/adan/program/tetrisAI/./include/tetrisAI.h
+iostream
+-
+
+/home/adan/program/tetrisAI/main.cpp
+./include/tetrisAI.h
+/home/adan/program/tetrisAI/./include/tetrisAI.h
+
+/home/adan/program/tetrisAI/tetrisAI.cpp
+./include/tetrisAI.h
+/home/adan/program/tetrisAI/./include/tetrisAI.h
+
