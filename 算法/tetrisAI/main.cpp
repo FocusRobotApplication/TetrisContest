@@ -22,7 +22,7 @@ int main(int argc, char** argv)
         cout << "AI is init..." << endl;
         AI.AIrun();
         cout << "AI is running..." << endl;
-        AI.addbesttomap();
+        //AI.addbesttomap();
         cout << "X: " << AI.bestX << endl;
         cout << "Y: " << AI.bestY << endl;
         cout << "rotate count: " << AI.besttrans << endl;

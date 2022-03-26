@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/TetrisAI.dir/main.cpp.o CMakeFiles/TetrisAI.dir/tetrisAI.cpp.o  -o TetrisAI 

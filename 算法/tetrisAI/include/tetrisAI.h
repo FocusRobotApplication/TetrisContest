@@ -15,10 +15,10 @@ typedef struct
 class TetrisAI {
     private:
         int maxValue;
-        int map[15][10];
-        int map_copy[15][10];
-        int bestblock[4][4];
-        int currentblock[4][4];
+        int map[15][10] = {0};
+        int map_copy[15][10] = {0};
+        int bestblock[4][4] = {0};
+        int currentblock[4][4] = {0};
 
     public:
         int RowTransitions();

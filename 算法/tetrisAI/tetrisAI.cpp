@@ -87,7 +87,7 @@ int TetrisAI::RowTransitions()
     {
         for(int j = 0; j < 9; j++)
         {
-            if((map[i][j] != 0 && map[i][j + 1] == 0) || (map[i][j] == 0 && map[i][j + 1] != 0))
+            if((map_copy[i][j] != 0 && map_copy[i][j + 1] == 0) || (map_copy[i][j] == 0 && map_copy[i][j + 1] != 0))
             {
                 sum++;
             }
@@ -104,7 +104,7 @@ int TetrisAI::ColumnTransitions()
     {
         for(int j = 0; j < 10; j++)
         {
-            if((map[i][j] != 0 && map[i + 1][j] == 0) || (map[i][j] == 0 && map[i + 1][j] != 0))
+            if((map_copy[i][j] != 0 && map_copy[i + 1][j] == 0) || (map_copy[i][j] == 0 && map_copy[i + 1][j] != 0))
             {
                 sum++;
             }
@@ -122,7 +122,7 @@ int TetrisAI::NumberofHoles()
     {
         for(int i = 0; i<15; i++)
         {
-            if(map[i][j] != 0)
+            if(map_copy[i][j] != 0)
             {
                 flag = true;
             }
@@ -151,7 +151,7 @@ int TetrisAI::WellSums()
         {
             if(j == 0)
             {
-                if(map[i][j] == 0 && map[i][j + 1] != 0)
+                if(map_copy[i][j] == 0 && map_copy[i][j + 1] != 0)
                 {
                     cnt++;
                 }
@@ -163,7 +163,7 @@ int TetrisAI::WellSums()
             }
             if(j == 9)
             {
-                if(map[i][j] == 0 && map[i][j - 1] != 0)
+                if(map_copy[i][j] == 0 && map_copy[i][j - 1] != 0)
                 {
                     cnt++;
                 }
@@ -175,7 +175,7 @@ int TetrisAI::WellSums()
             }
             else
             {
-                if(map[i][j] == 0 && map[i][j + 1] != 0 && map[i][j - 1] != 0)
+                if(map_copy[i][j] == 0 && map_copy[i][j + 1] != 0 && map_copy[i][j - 1] != 0)
                 {
                     cnt++;
                 }
@@ -263,7 +263,7 @@ int TetrisAI::PierreDellacherie()
     int score =34*RowsEliminated -
     32*RowTransitions() -
     93*ColumnTransitions() -
-    1000*NumberofHoles() -
+    100*NumberofHoles() -
     34*WellSums();
     
     return score;
@@ -308,17 +308,18 @@ void TetrisAI::AIrun()
             }
         }
         cout << "First step" << endl;
-        for(int j = 0; j < 10; j++)
+        for(int j = -3; j < 10; j++)
         {
-            for(int i = 0; j < 15; i++)
+            for(int i = -3; i < 15; i++)
             {
-                cout << "111" << endl;
+                cout << collisionJudge(i, j) << endl;
                 if(collisionJudge(i, j))
                 {
                     cout << "2" << endl;
                     copymap();
                     addtomapcopy(i, j);
                     int score = PierreDellacherie();
+                    cout << score << endl;
                     if(score > MaxScore)
                     {
                         MaxScore = score;

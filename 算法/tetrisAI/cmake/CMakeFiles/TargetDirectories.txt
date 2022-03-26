@@ -1,3 +1,0 @@
-/home/adan/program/tetrisAI/cmake/CMakeFiles/rebuild_cache.dir
-/home/adan/program/tetrisAI/cmake/CMakeFiles/TetrisAI.dir
-/home/adan/program/tetrisAI/cmake/CMakeFiles/edit_cache.dir
